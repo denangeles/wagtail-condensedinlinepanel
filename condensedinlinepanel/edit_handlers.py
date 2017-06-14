@@ -132,7 +132,7 @@ class BaseCondensedInlinePanel(BaseInlinePanel):
     formset_class = BaseCondensedInlinePanelFormSet
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(BaseCondensedInlinePanel, self).__init__(*args, **kwargs)
         self.formset.to_json()
 
     @classmethod
