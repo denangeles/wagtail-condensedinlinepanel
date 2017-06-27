@@ -21,6 +21,10 @@
                 var needsEscaping = false;
             {% endif %}
 
+            if(!value || value==''){
+                value = '';
+            }
+
             value = value.toString();
 
             if (needsEscaping) {
