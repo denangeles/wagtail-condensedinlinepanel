@@ -153,7 +153,8 @@ class BaseCondensedInlinePanel(BaseInlinePanel):
 
 
 class CondensedInlinePanel(object):
-    def __init__(self, relation_name, panels=None, label='', help_text='', min_num=None, max_num=None, card_header_from_field=None, card_header_from_js=None, card_header_from_js_safe=None):
+    def __init__(self, relation_name, panels=None, label='', help_text='', min_num=None, max_num=None,
+                 card_header_from_field=None, card_header_from_js=None, card_header_from_js_safe=None, card_header_create_text=''):
         self.relation_name = relation_name
         self.panels = panels
         self.label = label
@@ -163,6 +164,7 @@ class CondensedInlinePanel(object):
         self.card_header_from_field = card_header_from_field
         self.card_header_from_js = card_header_from_js
         self.card_header_from_js_safe = card_header_from_js_safe
+        self.card_header_create_text = card_header_create_text
 
     def bind_to_model(self, model):
         if django.VERSION >= (1, 9):
@@ -184,4 +186,5 @@ class CondensedInlinePanel(object):
             'card_header_from_field': self.card_header_from_field,
             'card_header_from_js': self.card_header_from_js,
             'card_header_from_js_safe': self.card_header_from_js_safe,
+            'card_header_create_text': self.card_header_create_text
         })

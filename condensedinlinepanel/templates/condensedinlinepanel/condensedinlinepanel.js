@@ -22,7 +22,7 @@
             {% endif %}
 
             if(!value || value==''){
-                value = '';
+                value = '{{self.card_header_create_text}}';
             }
 
             value = value.toString();
